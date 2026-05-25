@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Герман и Любовь Викторовна ✦ Семейная вселенная</title>
+  <!-- Google Fonts: тёплые семейные шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 для иконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f5f2eb;
+      color: #3b3a37;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      background-image: radial-gradient(circle at 20% 20%, rgba(180, 200, 210, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(200, 220, 200, 0.2) 0%, transparent 45%);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: #3a423b;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Навигация */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(135, 145, 135, 0.25);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #5f6b5c;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo i {
+      color: #8aa0a2;
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4e5650;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s, border-bottom 0.2s;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: #7c8c7a;
+      border-bottom-color: #b6c8b6;
+    }
+
+    /* Главный блок */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 45px 0 60px;
+      gap: 35px;
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 3.6rem);
+      line-height: 1.2;
+      color: #3b453b;
+      margin-bottom: 15px;
+    }
+
+    .hero-text h1 span {
+      display: block;
+      font-style: italic;
+      font-weight: 400;
+      color: #647a6b;
+    }
+
+    .hero-text .intro {
+      font-size: 1.2rem;
+      color: #5a6057;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .btn {
+      background: #a3b6a3;
+      color: #fefefb;
+      padding: 13px 34px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      box-shadow: 0 10px 18px rgba(130, 150, 130, 0.25);
+      background: linear-gradient(135deg, #9aae9a 0%, #7f947f 100%);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #8b9f8b 0%, #6d806d 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 22px rgba(110, 130, 110, 0.35);
+    }
+
+    .hero-illustration {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle-frame {
+      background: #e8f0e8;
+      background: linear-gradient(145deg, #dee9de 0%, #cad7cf 100%);
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6.5rem;
+      color: #6b7b6d;
+      box-shadow: 0 20px 30px rgba(120, 135, 120, 0.25);
+      position: relative;
+    }
+
+    .circle-frame i {
+      filter: drop-shadow(0 6px 8px rgba(0,0,0,0.1));
+    }
+
+    /* Профили */
+    .profiles {
+      padding: 60px 0 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 250, 0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 48px;
+      padding: 35px 25px 30px;
+      box-shadow: 0 20px 30px rgba(150, 160, 150, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      border: 1px solid rgba(180, 195, 180, 0.35);
+    }
+
+    .profile-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 38px rgba(120, 135, 120, 0.22);
+    }
+
+    .profile-icon {
+      font-size: 3.5rem;
+      color: #7d927d;
+      margin-bottom: 15px;
+      background: #e3efe3;
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.3s;
+    }
+
+    .profile-card:hover .profile-icon {
+      background: #d4e4d4;
+    }
+
+    .profile-card h2 {
+      font-size: 2.1rem;
+      margin-bottom: 8px;
+      color: #4b5847;
+    }
+
+    .subtitle {
+      font-weight: 600;
+      color: #6d7a67;
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .dream-box {
+      background: #f0f5f0;
+      padding: 16px 14px;
+      border-radius: 28px;
+      margin: 20px 0 10px;
+      font-style: italic;
+      color: #3f4a3c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border: 1px dashed #b1c2b1;
+    }
+
+    .superpower-text {
+      text-align: left;
+      background: #f4f9f8;
+      padding: 20px 18px;
+      border-radius: 26px;
+      color: #3e4944;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-top: 15px;
+      border-left: 5px solid #a3b9b0;
+    }
+
+    .superpower-text i {
+      color: #7f9a8a;
+      margin-right: 6px;
+    }
+
+    .quote {
+      background: rgba(255, 255, 250, 0.7);
+      padding: 40px 30px;
+      border-radius: 60px;
+      margin: 40px 0 55px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #4d5b4b;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+
+    /* НОВАЯ СЕКЦИЯ: КОНТЕЙНЕРЫ ДЛЯ ФОТОГРАФИЙ (СЕМЕЙНАЯ ГАЛЕРЕЯ) */
+    .photo-section {
+      margin: 30px 0 40px;
+    }
+    .photo-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #4e6149;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      letter-spacing: -0.2px;
+    }
+    .photo-section h2 i {
+      font-size: 2rem;
+      color: #8da38a;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .photo-card {
+      background: rgba(255, 254, 248, 0.85);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 16px 28px rgba(90, 105, 90, 0.12);
+      border: 1px solid rgba(170, 190, 165, 0.4);
+    }
+    .photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 26px 38px rgba(70, 90, 70, 0.2);
+    }
+    .photo-frame {
+      padding: 14px;
+      background: #fefaf2;
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 32px;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .photo-card:hover .photo-frame img {
+      transform: scale(1.02);
+    }
+    .photo-caption {
+      padding: 14px 18px 20px;
+      text-align: center;
+      font-weight: 500;
+      color: #4a5e4a;
+      font-size: 1rem;
+      background: rgba(255, 255, 248, 0.9);
+      border-top: 1px solid #e7efdf;
+      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .photo-caption i {
+      color: #b1c7a5;
+      font-size: 1.1rem;
+    }
+    /* дополнительная адаптивность */
+    @media (max-width: 650px) {
+      .photo-frame img {
+        height: 220px;
+      }
+      .photo-section h2 {
+        font-size: 1.8rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0 35px;
+      color: #7b8477;
+      border-top: 1px solid rgba(150, 165, 150, 0.3);
+      margin-top: 30px;
+      font-size: 0.95rem;
+    }
+
+    footer i {
+      color: #b0c0b0;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 650px) {
+      .logo {
+        font-size: 1.6rem;
+      }
+      .nav-links {
+        gap: 18px;
+        margin-top: 10px;
+      }
+      .hero-text h1 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Навигация -->
+    <nav>
+      <div class="logo">
+        <i class="fas fa-feather-alt"></i> Семейный круг
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О Германе</a></li>
+        <li><a href="#">О маме</a></li>
+        <li><a href="#">Ценности</a></li>
+      </ul>
+    </nav>
+
+    <!-- Приветственный блок -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Герман <span>&</span> Любовь Викторовна</h1>
+        <p class="intro">Двое в мире, где сосиски в тесте встречаются с врачебной мудростью, а любовь лечит лучше всяких лекарств.</p>
+        <a href="#" class="btn"><i class="fas fa-heart" style="margin-right: 8px;"></i>Наша история</a>
+      </div>
+      <div class="hero-illustration">
+        <div class="circle-frame">
+          <i class="fas fa-house-user"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Карточки ребёнка и родителя -->
+    <div class="profiles">
+      <!-- Герман -->
+      <div class="profile-card">
+        <div class="profile-icon">
+          <i class="fas fa-child"></i>
+        </div>
+        <h2>Герман</h2>
+        <div class="subtitle">
+          <i class="fas fa-birthday-cake"></i> 10 лет
+        </div>
+        <p style="margin-bottom: 5px; color: #4f5b4a;">✨ Главный мечтатель семьи ✨</p>
+        <div class="dream-box">
+          <i class="fas fa-hotdog" style="font-size: 1.8rem; color: #c49a6c;"></i>
+          <span><strong>5 000 000 сосисок в тесте</strong></span>
+        </div>
+        <p style="font-size: 0.95rem; margin-top: 15px; color: #596553;">
+          Герман точно знает, что счастье измеряется не в цифрах, но если уж считать – то только съедобными радостями.
+        </p>
+      </div>
+
+      <!-- Любовь Викторовна -->
+      <div class="profile-card">
+        <div class="profile-icon">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <h2>Любовь Викторовна</h2>
+        <div class="subtitle">
+          <i class="fas fa-star"></i> Супермама <i class="fas fa-star"></i>
+        </div>
+        <div class="superpower-text">
+          <p><i class="fas fa-heartbeat"></i> <strong>Суперспособность:</strong></p>
+          <p style="margin-top: 8px;">🩺 Любит медицину и лечит людей. Особое призвание — сложные случаи диагностики и лечения заболеваний.</p>
+          <p style="margin-top: 12px;"><i class="fas fa-heart"></i> А ещё наша мама любит меня, Германа, моего старшего брата и всю семью. Она создаёт счастливый, дружный дом, где тепло и уютно каждому.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Цитата-философия -->
+    <div class="quote">
+      <i class="fas fa-quote-left" style="color: #b6cdb6; margin-right: 10px;"></i>
+      В этой семье лечат не только таблетками, но и объятиями. И даже пять миллионов сосисок не заменят мамину улыбку.
+      <i class="fas fa-quote-right" style="color: #b6cdb6; margin-left: 10px;"></i>
+    </div>
+
+    <!-- НОВЫЙ БЛОК: КОНТЕЙНЕРЫ ДЛЯ ФОТОГРАФИЙ / СЕМЕЙНАЯ ГАЛЕРЕЯ -->
+    <div class="photo-section">
+      <h2><i class="fas fa-camera-retro"></i> Семейный фотоальбом <i class="fas fa-images"></i></h2>
+      <div class="photo-grid">
+        <!-- Фото-контейнер 1: Герман -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="https://placehold.co/600x450/E6F0E6/5D6E5A?text=✨+Герман+и+его+улыбка+✨&font=Quicksand" 
+                 alt="Портрет Германа - добрый и мечтательный, фото контейнер" 
+                 loading="lazy">
+          </div>
+          <div class="photo-caption">
+            <i class="fas fa-smile-wink"></i> Герман — генератор идей и миллиона сосисок!
+          </div>
+        </div>
+        <!-- Фото-контейнер 2: Любовь Викторовна (мама) -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="https://placehold.co/600x450/F2F1E8/697F64?text=🩺+Любовь+Викторовна+🌿&font=Quicksand" 
+                 alt="Любовь Викторовна - заботливый доктор и мама" 
+                 loading="lazy">
+          </div>
+          <div class="photo-caption">
+            <i class="fas fa-heartbeat"></i> Мамина мудрость, тепло и врачебный талант
+          </div>
+        </div>
+        <!-- Фото-контейнер 3: Семейная атмосфера и уют -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="https://placehold.co/600x450/EDF3E8/5A7163?text=🏡+Наш+тёплый+дом+🏡&font=Quicksand" 
+                 alt="Семейный уют - объятия и счастье" 
+                 loading="lazy">
+          </div>
+          <div class="photo-caption">
+            <i class="fas fa-home"></i> Дом, где всегда ждут и поддерживают
+          </div>
+        </div>
+        <!-- Фото-контейнер 4: Счастливые моменты вместе -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="https://placehold.co/600x450/FFF5E6/6C8265?text=💞+Семейная+вселенная+💫&font=Quicksand" 
+                 alt="Герман и мама вместе - счастливые моменты" 
+                 loading="lazy">
+          </div>
+          <div class="photo-caption">
+            <i class="fas fa-star-of-life"></i> Наша дружная команда: любовь, забота и смех
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+      <p>Сделано с <i class="fas fa-heart"></i> для Германа и Любови Викторовны • <span style="color: #8ba08b;">Семья — это наша вселенная</span></p>
+      <p style="font-size: 0.85rem; margin-top: 8px; color: #9aa59a;"><i class="far fa-smile"></i> 2025 · тёплые семейные хроники</p>
+    </footer>
+  </div>
+</body>
+</html>
